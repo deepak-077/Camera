@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 .bg-diagonal {
   background: linear-gradient(
     193deg,          /* diagonal angle */
@@ -8,5 +9,4 @@
     #b7633a 30%      /* bottom half brown */
   );
 }
-
 

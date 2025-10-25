@@ -24,19 +24,19 @@ function HomeSection() {
         
       </div>
 
-      {/* to the right side of the camera */}
+      
       <div className="absolute text-black  right-16 top-[70%]">
         <p>More than Just a Camera</p>
         <p>It's your creative partner</p>
       </div>
 
-      {/* to the left side of the camera */}
+      
       <div className="absolute text-black  left-16 top-[80%]">
         <p>Discover Lumora XI for creative professionals</p>
         <p>who want to capture every moment</p>
       </div>
 
-    {/* at the center but bottom of the page  */}
+    
       <div className="absolute bottom-12 w-full flex justify-center">
         <button className="bg-black text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-[#b7633a] transition">
            Explore More
