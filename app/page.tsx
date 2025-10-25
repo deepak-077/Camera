@@ -10,8 +10,6 @@ import FloatingCamera from "./Components/FloatingCamera";
 import Floating3DCamera from "./Components/FloatingCamera2";
 
 
-
-
 export default function Home() {
 
   const sections = [
@@ -19,17 +17,16 @@ export default function Home() {
     <About/>,
     <Contact/>,
     <Projects/>,
-    
-    
   ]
+
+  
+
+
   return (
-
      <div className="relative w-full h-screen ">
-      {/* <Floating3D sections={sections.length} /> */}
       <FloatingCamera sections={sections.length} />
-
-      {/* <Floating3DCamera sections={sections.length}/> */}
       <ScrollSections sections={sections} />
+      
     </div>
     // <Cards/>
   

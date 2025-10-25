@@ -5,19 +5,19 @@ import Lenis from "lenis";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-  "/images/lummi/img15.png",
-  "/images/lummi/img21.png",
-  "/images/lummi/img3.png",
-  "/images/lummi/img4.png",
-  "/images/lummi/img5.png",
-  "/images/lummi/img6.png",
-  "/images/lummi/img7.png",
-  "/images/lummi/img8.png",
-  "/images/lummi/img24.png",
-  "/images/lummi/img10.png",
-  "/images/lummi/img11.png",
-  "/images/lummi/img12.png",
-  "/images/lummi/img13.png",
+  "img15.png",
+  "img21.png",
+  "img3.png",
+  "img4.png",
+  "img5.png",
+  "img6.png",
+  "img7.png",
+  "img8.png",
+  "img24.png",
+  "img10.png",
+  "img11.png",
+  "img12.png",
+  "img13.png",
 ];
 
 const Skiper30 = () => {
