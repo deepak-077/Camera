@@ -7,7 +7,7 @@ const About = () => {
       <div className="absolute inset-0 bg-diagonal"></div>
 
       {/* Content above the background */}
-      <div className="relative z-10">
+      <div className="relative z-0">
         <div className="flex mt-8 text-[170px] text-black font-extrabold gap-20 transform rotate-[13deg] origin-left-top">
           <span>ULTRA </span>
           <span className="">HD</span>
