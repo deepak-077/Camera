@@ -92,6 +92,41 @@ const Column = ({ images, y }: ColumnProps) => {
       
         {images.map((src, i) => (
           <div className="relative h-full w-full bg-white flex flex-col items-center gap-1 ">
+
+        {/* first container - username and other info */}
+              <div className="flex max-w-[470px] h-[44px] pb-3 pl-1 ">
+                {/* inner container */}
+                <div className="flex items-center justify-between w-full max-w-[466px] h-[32px] gap-2">
+
+                  {/* dp image */}
+                  <div className="flex items-center max-w-[41px] h-[41px]">
+                    <img className="max-w-[32px] h-[32px] rounded-full" src="/Instagram_files/mahi.jpg" alt="" />
+                  </div>
+
+                  {/* name and time of upload */}
+                  <div className="flex w-full max-w-[390px] h-[18px] gap-5">
+                    <div className="flex items-center max-w-[60px] h-[18px] gap-1" >
+                      <span className=" text-sm">mahindra</span>
+                        {/* verified tag */}
+                        <span className=" flex justify-center items-center max-w-[12px] h-[12px]">
+                            <img className=" max-w-[12px] h-[12px]" src="/Instagram_files/verified.png" alt="" />
+                        </span>
+                    </div>
+
+                    <div className=" w-full max-w-[47px] h-[18px] flex items-center gap-1.5">
+                      <span className="max-w-[7px] h-[18px] text-sm">.</span>
+                      <time className="h-[17px] text-sm max-w-[19px]  "> 2d </time>
+                    </div>
+                  </div>
+
+                  {/* three dots option */}
+                  <div>
+                    <span className="text-sm">...</span>
+                  </div>
+
+              </div>
+
+            </div>
             
             <div key={i} className="relative h-[390px] w-[290px] overflow-hidden top-1.5">
               <img
@@ -114,6 +149,27 @@ const Column = ({ images, y }: ColumnProps) => {
 
                 </div>
               </div>
+
+              {/* second section - total likes */}
+              <div className="max-w-[470px] w-full h-[18px]">
+                707 likes
+              </div>
+
+              {/* third section - caption */}
+              <div className="max-w-[470px] w-full min-h-[18px] max-h-[54px] h-[auto] mt-2">
+                <span className="flex items-start max-w-[458px] w-full min-h-[18px] max-h-[36px] h-[auto] text-sm"> 
+
+                {/* make this to div and style accordingly */}
+                <span className="flex items-center gap-1">
+                  <span className="font-semibold"> username </span>
+                    <img className="max-w-[12px] h-[12px]" src="/Instagram_files/verified.png" alt="" />
+                </span>
+                                         
+                </span>
+                <span>more</span>
+                                   
+              </div>
+
         </div>
       ))}
       
