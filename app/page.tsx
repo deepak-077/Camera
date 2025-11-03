@@ -45,6 +45,7 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 import FloatingCamera from "./Components/FloatingCamera";
+import Footer from "./Components/Footer";
 
 export default function Home() {
   const sections = [
@@ -52,6 +53,7 @@ export default function Home() {
     <About key="about" />,
     <Contact key="contact" />,
     <Projects key="projects" />,
+    <Footer key="footer"/>
   ];
 
   return (
