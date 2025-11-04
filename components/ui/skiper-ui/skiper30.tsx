@@ -106,7 +106,7 @@ const Column = ({ images, y }: ColumnProps) => {
                   {/* name */}
                   <div className="flex w-full max-w-[390px] h-[18px] gap-5">
                     <div className="flex items-center max-w-[60px] h-[18px] gap-1" >
-                      <span className=" text-sm">mahindra</span>
+                      <span className=" text-sm">username</span>
                         {/* verified tag */}
                         <span className=" flex justify-center items-center max-w-[12px] h-[12px]">
                             <img className=" max-w-[12px] h-[12px]" src="verified.png" alt="" />
@@ -152,15 +152,15 @@ const Column = ({ images, y }: ColumnProps) => {
               </div>
 
               {/* third section - caption */}
-              <div className="flex flex-col w-full min-h-[18px] max-h-[54px] h-auto">
+              <div className="flex flex-col w-full min-h-[18px] max-h-[54px] h-auto pl-5">
 
                 <div className="flex items-start max-w-[458px] w-full min-h-[18px] max-h-[36px] h-auto text-sm gap-0.5"> 
 
-                <div className="flex items-center ">
+                
                   <div className="font-semibold"> username </div>
                   
-                </div>
-                <span className="font-normal">Thanks! for capturing the beautiful moments of life.</span>                
+                
+                <span className="font-normal leading-tight">Thanks! for capturing the beautiful moments of life.</span>                
                 </div>
 
                 {/* fix later for long captions */}
