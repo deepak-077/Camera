@@ -91,36 +91,32 @@ const Column = ({ images, y }: ColumnProps) => {
     >
       
         {images.map((src, i) => (
-          <div className="relative h-full w-full bg-white flex flex-col items-center gap-1 ">
+          <div className="relative h-full w-full bg-white flex flex-col items-center gap-0.5 ">
 
         {/* first container - username and other info */}
-              <div className="flex max-w-[470px] h-[44px] pb-3 pl-1 ">
+              <div className="flex  w-full h-[35px] px-5 py-1">
                 {/* inner container */}
                 <div className="flex items-center justify-between w-full max-w-[466px] h-[32px] gap-2">
 
                   {/* dp image */}
                   <div className="flex items-center max-w-[41px] h-[41px]">
-                    <img className="max-w-[32px] h-[32px] rounded-full" src="/Instagram_files/mahi.jpg" alt="" />
+                    <img className="max-w-[32px] h-[32px] rounded-full" src="pic1.jpg" alt="" />
                   </div>
 
-                  {/* name and time of upload */}
+                  {/* name */}
                   <div className="flex w-full max-w-[390px] h-[18px] gap-5">
                     <div className="flex items-center max-w-[60px] h-[18px] gap-1" >
                       <span className=" text-sm">mahindra</span>
                         {/* verified tag */}
                         <span className=" flex justify-center items-center max-w-[12px] h-[12px]">
-                            <img className=" max-w-[12px] h-[12px]" src="/Instagram_files/verified.png" alt="" />
+                            <img className=" max-w-[12px] h-[12px]" src="verified.png" alt="" />
                         </span>
-                    </div>
-
-                    <div className=" w-full max-w-[47px] h-[18px] flex items-center gap-1.5">
-                      <span className="max-w-[7px] h-[18px] text-sm">.</span>
-                      <time className="h-[17px] text-sm max-w-[19px]  "> 2d </time>
                     </div>
                   </div>
 
-                  {/* three dots option */}
-                  <div>
+                  {/* follow button & option */}
+                  <div className="flex items-center gap-1">
+                    <button className="flex items-center justify-center h-[20px] text-sm text-center rounded-2xl bg-lime-400 p-2">Follow </button>
                     <span className="text-sm">...</span>
                   </div>
 
@@ -151,22 +147,24 @@ const Column = ({ images, y }: ColumnProps) => {
               </div>
 
               {/* second section - total likes */}
-              <div className="max-w-[470px] w-full h-[18px]">
+              <div className="pl-5 w-full h-[18px] text-xs">
                 707 likes
               </div>
 
               {/* third section - caption */}
-              <div className="max-w-[470px] w-full min-h-[18px] max-h-[54px] h-[auto] mt-2">
-                <span className="flex items-start max-w-[458px] w-full min-h-[18px] max-h-[36px] h-[auto] text-sm"> 
+              <div className="flex flex-col w-full min-h-[18px] max-h-[54px] h-auto">
 
-                {/* make this to div and style accordingly */}
-                <span className="flex items-center gap-1">
-                  <span className="font-semibold"> username </span>
-                    <img className="max-w-[12px] h-[12px]" src="/Instagram_files/verified.png" alt="" />
-                </span>
-                                         
-                </span>
-                <span>more</span>
+                <div className="flex items-start max-w-[458px] w-full min-h-[18px] max-h-[36px] h-auto text-sm gap-0.5"> 
+
+                <div className="flex items-center ">
+                  <div className="font-semibold"> username </div>
+                  
+                </div>
+                <span className="font-normal">Thanks! for capturing the beautiful moments of life.</span>                
+                </div>
+
+                {/* fix later for long captions */}
+                {/* <span className="text-sm">more</span> */}
                                    
               </div>
 
