@@ -1,4 +1,12 @@
+import { useState } from "react";
+
 function HomeSection() {
+  const [clicked,setClicked]=useState(false)
+
+  function handleClick(){
+    setClicked(prev=>!prev)
+  }
+
   return (
     <div className=" w-full h-full bg-[#d2cabd] text-white  rounded-4xl">
       <nav className="flex justify-around p-5 text-3xl">
@@ -18,9 +26,30 @@ function HomeSection() {
         <div className="hidden md:flex">
           <img className="size-[35px] md:size-[50px]" src="cart.png" alt="" />
         </div>
-        <div>
+
+        {/* menu icon */}
+        <div className="flex md:hidden" onClick={handleClick} >
           <img className="size-[35px] md:size-[50px]" src="menu.png" alt="" />
         </div>
+
+        {/* sidebar */}
+
+        <div className={`absolute top-0 right-0 h-full w-2/3 sm:w-1/3 transform transition-transform duration-300 ease-in-out bg-amber-400 ${
+        clicked ? "translate-x-0" : "translate-x-full"
+        }`}
+        >
+        <div className="p-6 text-black text-2xl">
+          <button onClick={handleClick} className="text-black text-3xl font-bold float-right">
+            ✕
+          </button>
+          <div className="mt-16 flex flex-col gap-6">
+            <span>Home</span>
+            <span>Products</span>
+            <span>About Us</span>
+            <span>Contact</span>
+          </div>
+        </div>
+      </div>
       </nav>
 
       <div className="absolute top-1/5 md:top-1/4 flex flex-col justify-center text-[50px]  xs:text-[70px] sm:text-[90px] md:text-[110px] lg:text-[150px] text-black  font-extrabold ml-10  lg:ml-20 xl:ml-60 leading-15 xs:leading-20 sm:leading-25 md:leading-35 ">
@@ -47,6 +76,12 @@ function HomeSection() {
            Explore More
          </button>
        </div>
+
+       
+        
+       
+
+      
 
     </div>
   );
