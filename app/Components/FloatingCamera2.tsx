@@ -1,70 +1,97 @@
 "use client";
 
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { TextureLoader } from "three";
 import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-interface Floating3DProps {
+interface FloatingCameraProps {
   sections: number;
 }
 
-function CameraPlane() {
-  const texture = useLoader(TextureLoader, "/camera.png");
-  const meshRef = useRef<THREE.Mesh>(null!);
-
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-    meshRef.current.rotation.y = Math.sin(t * 0.5) * 0.15;
-    meshRef.current.rotation.x = Math.cos(t * 0.3) * 0.08;
-    meshRef.current.position.y = Math.sin(t * 0.6) * 0.05;
-  });
-
-  return (
-    <mesh ref={meshRef} scale={[3, 3, 3]}>
-      <planeGeometry args={[3, 2]} />
-      <meshBasicMaterial map={texture} transparent />
-    </mesh>
-  );
-}
-
-export default function Floating3DCamera({ sections }: Floating3DProps) {
+const FloatingCamera = ({ sections }: FloatingCameraProps) => {
+  const cameraRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const groupRef = useRef<THREE.Group>(null);
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (!groupRef.current || !containerRef.current) return;
+    if (!cameraRef.current || !containerRef.current) return;
+
+    const camera = cameraRef.current;
+
+    // Initial camera position
+    gsap.set(camera, {
+      xPercent: -50,
+      yPercent: -50,
+      left: "50%",
+      top: "50%",
+      opacity: 1,
+    });
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: document.body, // track global scroll
+        trigger: containerRef.current,
         start: "top top",
         end: `+=${window.innerHeight * (sections - 1)}`,
         scrub: 1,
+        scroller: window,
+        invalidateOnRefresh: true,
       },
     });
 
-    tl.to(groupRef.current.rotation, { z: 0.3, x: 0.1 }, 0);
-    tl.to(groupRef.current.scale, { x: 1.3, y: 1.3, z: 1.3 }, 0);
-    tl.to(groupRef.current.position, { z: -1, x: 0.5 }, 0);
+    // 🟩 1️⃣ First → Second page
+    tl.to(
+      camera,
+      {
+        top: `calc(55% - ${window.innerHeight / 4}px)`,
+        left: `calc(50% + ${window.innerWidth / 4}px)`,
+        rotation: 15,
+        scale: 1.3,
+        ease: "none",
+      },
+      0
+    );
+
+    tl.addLabel("midSecondPage", 0.5);
+
+    // 🟦 2️⃣ Second → Third page
+    tl.to(
+      camera,
+      {
+        top: "50%",
+        left: "50%",
+        rotation: 0,
+        scale: 1,
+        ease: "none",
+      },
+      "midSecondPage"
+    );
+
+    // 🟥 3️⃣ Fade out for the last section
+    tl.to(
+      camera,
+      {
+        opacity: 0,
+        ease: "none",
+      },
+      sections - 3 // fade as we reach 4th page
+    );
+
+    // Ensure correct measurements after resizing
+    ScrollTrigger.refresh();
   });
 
   return (
-    <div
-      ref={containerRef}
-      className="fixed inset-0 w-full h-full pointer-events-none z-[5]"
-    >
-      <Canvas camera={{ position: [0, 0, 6] }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} />
-        <group ref={groupRef}>
-          <CameraPlane />
-        </group>
-      </Canvas>
+    <div ref={containerRef} className="fixed inset-0 pointer-events-none z-10">
+      <img
+        ref={cameraRef}
+        src="camera.png"
+        alt="3D camera"
+        className="absolute w-[900px] opacity-90"
+      />
     </div>
   );
-}
+};
+
+export default FloatingCamera;

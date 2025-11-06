@@ -155,17 +155,12 @@ const Column = ({ images, y }: ColumnProps) => {
               <div className="flex flex-col w-full min-h-[18px] max-h-[54px] h-auto pl-5">
 
                 <div className="flex items-start max-w-[458px] w-full min-h-[18px] max-h-[36px] h-auto text-sm gap-0.5"> 
-
-                
                   <div className="font-semibold"> username </div>
-                  
-                
-                <span className="font-normal leading-tight">Thanks! for capturing the beautiful moments of life.</span>                
+                  <span className="font-normal leading-tight">Thanks! for capturing the beautiful moments of life.</span>                
                 </div>
 
                 {/* fix later for long captions */}
-                {/* <span className="text-sm">more</span> */}
-                                   
+                {/* <span className="text-sm">more</span> */}                 
               </div>
 
         </div>

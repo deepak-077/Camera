@@ -47,19 +47,21 @@ import Projects from "./Components/Projects";
 import FloatingCamera from "./Components/FloatingCamera";
 import Footer from "./Components/Footer";
 
+
 export default function Home() {
   const sections = [
     <HomeSection key="home" />,
-    <About key="about" />,
-    <Contact key="contact" />,
-    <Projects key="projects" />,
-    <Footer key="footer"/>
+    // <About key="about" />,
+    // <Contact key="contact" />,
+    // <Projects key="projects" />,
+    // <Footer key="footer"/>
   ];
 
   return (
     <div className="relative w-full">
       {/* Floating camera overlay */}
       <FloatingCamera sections={sections.length} />
+      
 
       {/* Sections stacked normally */}
       <div className="flex flex-col w-full">

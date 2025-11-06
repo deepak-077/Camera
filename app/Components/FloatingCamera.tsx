@@ -114,6 +114,7 @@
 //       left: "50%",
 //       top: "50%",
 //       opacity: 1,
+      
 //     });
 
 //     const tl = gsap.timeline({
