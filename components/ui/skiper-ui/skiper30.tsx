@@ -59,7 +59,7 @@ const Skiper30 = () => {
   return (
     <main className="w-full bg-[#d2cabd] text-black">
       <div className="font-geist flex items-center justify-center gap-2 ">
-          <span className="relative text-6xl uppercase leading-tight opacity-100 ">
+          <span className="relative text-2xl xs:3xl sm:text-4xl md:5xl lg:text-6xl uppercase leading-tight opacity-100 ">
             Where Every Click Becomes A Memory
           </span>
       </div>
@@ -86,7 +86,7 @@ type ColumnProps = {
 const Column = ({ images, y }: ColumnProps) => {
   return (
     <motion.div
-      className="relative -top-[45%] flex h-full w-1/4 min-w-[250px] flex-col gap-[2vw] first:top-[-45%] [&:nth-child(2)]:top-[-95%] [&:nth-child(3)]:top-[-45%] [&:nth-child(4)]:top-[-75%]"
+      className="relative -top-[45%] flex h-full xs:w-full sm:w-1/2 md:w-1/3 w-1/4 min-w-[250px] flex-col gap-[2vw] first:top-[-45%] [&:nth-child(2)]:top-[-95%] [&:nth-child(3)]:top-[-45%] [&:nth-child(4)]:top-[-75%]"
       style={{ y }}
     >
       
@@ -124,14 +124,14 @@ const Column = ({ images, y }: ColumnProps) => {
 
             </div>
             
-            <div key={i} className="relative h-[390px] w-[290px] overflow-hidden top-1.5">
+            <div key={i} className="relative h-[390px] w-full max-w-[290px] overflow-hidden top-1.5">
               <img
               src={`${src}`}
               alt="image"
               className="pointer-events-none object-cover"
               />
             </div>
-             <div className="flex h-[30px] w-[290px] bg-amber-300 justify-between items-center px-2">
+             <div className="flex h-[30px] w-full max-w-[290px] bg-amber-300 justify-between items-center px-2">
                 {/* like comment and share */}
                 <div className="flex gap-1">
                   <img className="size-5 " src="like.png" alt="" />

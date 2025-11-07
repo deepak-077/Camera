@@ -51,10 +51,10 @@ import Footer from "./Components/Footer";
 export default function Home() {
   const sections = [
     <HomeSection key="home" />,
-    // <About key="about" />,
-    // <Contact key="contact" />,
-    // <Projects key="projects" />,
-    // <Footer key="footer"/>
+    <About key="about" />,
+    <Contact key="contact" />,
+    <Projects key="projects" />,
+    <Footer key="footer"/>
   ];
 
   return (

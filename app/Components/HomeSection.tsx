@@ -34,7 +34,7 @@ function HomeSection() {
 
         {/* sidebar */}
 
-        <div className={`absolute top-0 right-0 h-full w-2/3 sm:w-1/3 transform transition-transform duration-300 ease-in-out bg-amber-400 ${
+        <div className={`fixed top-0 right-0 h-full w-2/3 sm:w-1/3  z-50 transform transition-transform duration-300 ease-in-out bg-amber-400 ${
         clicked ? "translate-x-0" : "translate-x-full"
         }`}
         >
@@ -47,6 +47,9 @@ function HomeSection() {
             <span>Products</span>
             <span>About Us</span>
             <span>Contact</span>
+            <div >
+              <img className="size-[35px] md:size-[50px]" src="cart.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
