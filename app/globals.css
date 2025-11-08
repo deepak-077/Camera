@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Sarala:wght@400;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @theme{
     --breakpoint-xs:460px;
+    --font-cursive:"Dancing Script", "cursive"
 }
-
-
 
 .bg-diagonal {
   background: linear-gradient(
