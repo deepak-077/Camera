@@ -29,7 +29,7 @@ const Contact = () => {
             <p className="absolute top-9/10 text-3xl font-cursive">Pre wedding</p>
           </div>
 
-          <div className="relative bg-white h-[290px] w-[250px] sm:h-[350] sm:w-[350] md:h-[390px] md:w-[390px] flex justify-center rounded-2xl rotate-[12]">
+          <div className="relative bg-white h-[290px] w-[250px] sm:h-[350] sm:w-[350] md:h-[390px] md:w-[390px] flex justify-center rounded-2xl rotate-[12] ">
             <img className="h-[250px] w-[210px] sm:h-[310px] sm:w-[310px] md:h-[350px] md:w-[350px] rounded-3xl mt-3" src="wedding.jpg" alt="" />
             <p className="absolute top-9/10 text-3xl font-cursive"> Wedding</p>
           </div>
