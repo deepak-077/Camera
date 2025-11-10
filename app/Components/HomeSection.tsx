@@ -35,7 +35,7 @@ function HomeSection() {
 
         {/* sidebar */}
 
-        <div className={`fixed top-0 right-0 h-full w-2/3 sm:w-1/3  z-50 transform transition-transform duration-300 ease-in-out bg-amber-400 ${
+        <div className={`fixed top-0 right-0 h-full w-2/3 sm:w-1/3  z-50 transform transition-transform duration-300 ease-in-out bg-[#e4946d] ${
         clicked ? "translate-x-0" : "translate-x-full"
         }`}
         >

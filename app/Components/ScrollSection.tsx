@@ -81,7 +81,9 @@ const ScrollSections = ({ sections, className }: ScrollSectionsProps) => {
       {sections.map((Section, i) => (
         <div
           key={i}
-          ref={(el) => (sectionRefs.current[i] = el)}
+          ref={(el: HTMLDivElement | null) => {
+  sectionRefs.current[i] = el;
+}}
           className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
         >
           {Section}
